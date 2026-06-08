@@ -2,25 +2,6 @@
 
 基于 .NET WinForms，使用 Win32 `SendInput` 模拟鼠标点击，`RegisterHotKey` 注册全局热键。
 
-## 运行
-
-```powershell
-# 方式一：直接运行
-dotnet run -c Release --project C:\UnityProject\MouseTool\MouseTool.csproj
-
-# 方式二：运行已生成的 exe
-C:\UnityProject\MouseTool\bin\Release\net10.0-windows\MouseTool.exe
-```
-
-> 在某些以管理员权限运行的目标窗口上点击时，本程序也需以管理员身份运行才能生效。
-
-## 发布为单文件 exe（可选）
-
-```powershell
-dotnet publish C:\UnityProject\MouseTool\MouseTool.csproj -c Release -r win-x64 `
-  -p:PublishSingleFile=true --self-contained false -o C:\UnityProject\MouseTool\publish
-```
-
 ## 功能
 
 - **连点模式**：按设定间隔不断点击。
