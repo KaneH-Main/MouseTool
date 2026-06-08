@@ -1,4 +1,4 @@
-# 鼠标连点器（方案二：C# WinForms + Win32）
+# 鼠标连点器（C# WinForms + Win32）
 
 基于 .NET WinForms，使用 Win32 `SendInput` 模拟鼠标点击，`RegisterHotKey` 注册全局热键。
 
@@ -52,12 +52,3 @@ dotnet publish C:\UnityProject\MouseTool\MouseTool.csproj -c Release -r win-x64 
 | `app.manifest` | 应用清单 |
 | `app.ico` | 软件图标（由 IconGen 生成） |
 | `IconGen/` | 一次性图标生成工具（不参与主程序编译） |
-
-## 重新生成图标
-
-修改 `IconGen/Program.cs` 后重新生成：
-
-```powershell
-dotnet run --project C:\UnityProject\MouseTool\IconGen\IconGen.csproj -c Release -- C:\UnityProject\MouseTool\app.ico
-dotnet build C:\UnityProject\MouseTool\MouseTool.csproj -c Release
-```
