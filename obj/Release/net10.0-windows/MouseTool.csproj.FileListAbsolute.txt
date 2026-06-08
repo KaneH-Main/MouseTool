@@ -1,0 +1,14 @@
+C:\UnityProject\MouseTool\bin\Release\net10.0-windows\MouseTool.exe
+C:\UnityProject\MouseTool\bin\Release\net10.0-windows\MouseTool.deps.json
+C:\UnityProject\MouseTool\bin\Release\net10.0-windows\MouseTool.runtimeconfig.json
+C:\UnityProject\MouseTool\bin\Release\net10.0-windows\MouseTool.dll
+C:\UnityProject\MouseTool\bin\Release\net10.0-windows\MouseTool.pdb
+C:\UnityProject\MouseTool\obj\Release\net10.0-windows\MouseTool.GeneratedMSBuildEditorConfig.editorconfig
+C:\UnityProject\MouseTool\obj\Release\net10.0-windows\MouseTool.AssemblyInfoInputs.cache
+C:\UnityProject\MouseTool\obj\Release\net10.0-windows\MouseTool.AssemblyInfo.cs
+C:\UnityProject\MouseTool\obj\Release\net10.0-windows\MouseTool.csproj.CoreCompileInputs.cache
+C:\UnityProject\MouseTool\obj\Release\net10.0-windows\MouseTool.dll
+C:\UnityProject\MouseTool\obj\Release\net10.0-windows\refint\MouseTool.dll
+C:\UnityProject\MouseTool\obj\Release\net10.0-windows\MouseTool.pdb
+C:\UnityProject\MouseTool\obj\Release\net10.0-windows\MouseTool.genruntimeconfig.cache
+C:\UnityProject\MouseTool\obj\Release\net10.0-windows\ref\MouseTool.dll

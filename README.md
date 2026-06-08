@@ -1,2 +1,63 @@
-# MouseTool
-免费鼠标连点器(支持连点、长按)
+# 鼠标连点器（方案二：C# WinForms + Win32）
+
+基于 .NET WinForms，使用 Win32 `SendInput` 模拟鼠标点击，`RegisterHotKey` 注册全局热键。
+
+## 运行
+
+```powershell
+# 方式一：直接运行
+dotnet run -c Release --project C:\UnityProject\MouseTool\MouseTool.csproj
+
+# 方式二：运行已生成的 exe
+C:\UnityProject\MouseTool\bin\Release\net10.0-windows\MouseTool.exe
+```
+
+> 在某些以管理员权限运行的目标窗口上点击时，本程序也需以管理员身份运行才能生效。
+
+## 发布为单文件 exe（可选）
+
+```powershell
+dotnet publish C:\UnityProject\MouseTool\MouseTool.csproj -c Release -r win-x64 `
+  -p:PublishSingleFile=true --self-contained false -o C:\UnityProject\MouseTool\publish
+```
+
+## 功能
+
+- **连点模式**：按设定间隔不断点击。
+  - **点击间隔**：单位毫秒，最小 1ms。后台线程基于 `Stopwatch` 绝对时间推进 + 末段自旋，短间隔下时序更稳。
+  - **点击方式**：单击 / 双击。
+  - **次数**：0 = 无限连点；>0 点够次数自动停止。
+- **长按模式**：按下鼠标键后一直保持按住，再次触发（或关窗）才释放。适合需要持续按住的场景。
+- **鼠标键**：左键 / 右键 / 中键（连点、长按共用）。
+- **固定坐标点击**：勾选后在指定屏幕坐标操作；用“拾取”按钮可在屏幕上点一下目标位置自动填入坐标。不勾选则在当前光标处操作。
+- **两个独立的可自定义热键**：
+  - 连点热键，默认 **F6**；长按热键，默认 **F7**。
+  - 点击对应输入框使其聚焦，然后按下任意组合键（如 `Ctrl + Alt + K`）即可设为热键；按 **Esc** 清除。
+  - 热键全局生效，窗口最小化也能用。若提示“注册失败”，说明该组合键被其他程序占用，换一个即可。
+  - 连点与长按互斥：一个运行时触发另一个会自动切换。
+- **配置持久化**：所有设置（间隔、鼠标键、方式、次数、固定坐标、两个自定义热键）在关闭时自动保存，下次启动恢复。
+  - 配置文件位置：`%AppData%\MouseTool\config.json`。删除该文件即可恢复默认值。
+- **软件图标**：圆角渐变底 + 光标 + 点击波纹，由 `IconGen` 工具生成 `app.ico` 并嵌入 exe。
+
+## 文件结构
+
+| 文件 | 说明 |
+| --- | --- |
+| `Program.cs` | 程序入口 |
+| `MainForm.cs` | 界面、热键消息处理（`WndProc`）、设置读取 |
+| `Clicker.cs` | 后台连点引擎（独立线程 + 精确等待） |
+| `HotkeyBox.cs` | 自定义热键捕获控件 |
+| `AppConfig.cs` | 配置持久化（读写 config.json） |
+| `NativeMethods.cs` | Win32 API 封装（SendInput / RegisterHotKey / 光标） |
+| `app.manifest` | 应用清单 |
+| `app.ico` | 软件图标（由 IconGen 生成） |
+| `IconGen/` | 一次性图标生成工具（不参与主程序编译） |
+
+## 重新生成图标
+
+修改 `IconGen/Program.cs` 后重新生成：
+
+```powershell
+dotnet run --project C:\UnityProject\MouseTool\IconGen\IconGen.csproj -c Release -- C:\UnityProject\MouseTool\app.ico
+dotnet build C:\UnityProject\MouseTool\MouseTool.csproj -c Release
+```

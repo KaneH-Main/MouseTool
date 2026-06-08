@@ -1,0 +1,14 @@
+C:\UnityProject\MouseTool\IconGen\bin\Release\net10.0-windows\IconGen.exe
+C:\UnityProject\MouseTool\IconGen\bin\Release\net10.0-windows\IconGen.deps.json
+C:\UnityProject\MouseTool\IconGen\bin\Release\net10.0-windows\IconGen.runtimeconfig.json
+C:\UnityProject\MouseTool\IconGen\bin\Release\net10.0-windows\IconGen.dll
+C:\UnityProject\MouseTool\IconGen\bin\Release\net10.0-windows\IconGen.pdb
+C:\UnityProject\MouseTool\IconGen\obj\Release\net10.0-windows\IconGen.GeneratedMSBuildEditorConfig.editorconfig
+C:\UnityProject\MouseTool\IconGen\obj\Release\net10.0-windows\IconGen.AssemblyInfoInputs.cache
+C:\UnityProject\MouseTool\IconGen\obj\Release\net10.0-windows\IconGen.AssemblyInfo.cs
+C:\UnityProject\MouseTool\IconGen\obj\Release\net10.0-windows\IconGen.csproj.CoreCompileInputs.cache
+C:\UnityProject\MouseTool\IconGen\obj\Release\net10.0-windows\IconGen.dll
+C:\UnityProject\MouseTool\IconGen\obj\Release\net10.0-windows\refint\IconGen.dll
+C:\UnityProject\MouseTool\IconGen\obj\Release\net10.0-windows\IconGen.pdb
+C:\UnityProject\MouseTool\IconGen\obj\Release\net10.0-windows\IconGen.genruntimeconfig.cache
+C:\UnityProject\MouseTool\IconGen\obj\Release\net10.0-windows\ref\IconGen.dll
