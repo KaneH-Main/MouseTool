@@ -1,0 +1,2 @@
+C:\UnityProject\MouseTool\publish\MouseTool.pdb
+C:\UnityProject\MouseTool\publish\MouseTool.exe
